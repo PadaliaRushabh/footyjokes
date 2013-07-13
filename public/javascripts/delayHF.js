@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 	//blocksit define
 	$(window).load( function() {
-		$('#container').BlocksIt({
+		$('#container-grid').BlocksIt({
 			numOfCol: 3,
 			offsetX: 8,
 			offsetY: 8
@@ -40,8 +40,8 @@ $(document).ready(function() {
 
 		if(conWidth != currentWidth) {
 			currentWidth = conWidth;
-			$('#container').width(conWidth);
-			$('#container').BlocksIt({
+			$('#container-grid').width(conWidth);
+			$('#container-grid').BlocksIt({
 				numOfCol: col,
 				offsetX: 8,
 				offsetY: 8
