@@ -11,12 +11,11 @@ var Post = require('../../models/models.js')
 mongoose.connect('mongodb://footyjokes:footyjokes@ds035428.mongolab.com:35428/footyjokes');
 
 api = function(){};
-
 //fetch all blogs from database
 api.prototype.ViewAllPosts = function(callback){
-    Post.find({},function(err , posts){
+    Post.find({}).sort({date:-1}).limit(25).execFind(function(err , posts){
       callback(err , posts);
-    })
+    });
 };
 
 
