@@ -20,7 +20,7 @@ mixin grid(box)
     strong
     p #{box.content}
     .inputs
-        button(type="button").btn.btn-success Share
+        button(type="button").btn.btn-success.clickable Share
         button(type="button").btn.btn-warning Share
         button(type="button").btn.btn-primary Comment
     .meta #{box.author}
@@ -34,5 +34,5 @@ mixin grid(box)
 block prepend content
     #container-grid
         each box in box_obj
-            .grid
-                +grid(box) 
+            div(id=box._id).grid
+                +grid(box)
