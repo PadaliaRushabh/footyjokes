@@ -1,1 +1,12 @@
 [Fri Jul 26 2013 16:10:44 GMT+0800 (SGT)] INFO author test passed
+[Fri Jul 26 2013 23:25:01 GMT+0800 (SGT)] INFO SavePost function doesnot exists
+[Fri Jul 26 2013 23:25:28 GMT+0800 (SGT)] INFO [TypeError: Object [object Object] has no method 'SavePost']
+[Fri Jul 26 2013 23:26:17 GMT+0800 (SGT)] INFO Object [object Object] has no method 'SavePost'
+[Fri Jul 26 2013 23:30:26 GMT+0800 (SGT)] INFO Save to Database test failed
+[Fri Jul 26 2013 23:32:52 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:40:09 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:40:33 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:45:14 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:45:30 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:45:39 GMT+0800 (SGT)] INFO Save to Database test passed
+[Fri Jul 26 2013 23:48:10 GMT+0800 (SGT)] INFO Save to Database test passed

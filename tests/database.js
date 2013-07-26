@@ -9,7 +9,6 @@ var Post = require('../models/models.js')
   , api = new (require('../controllers/DatabaseAPI/api.js').api);
 
 
-
 /*Database interaction
 api.ViewAllPosts(function(err , result){
     if (!err)
@@ -20,7 +19,7 @@ api.ViewAllPosts(function(err , result){
 */
 
 /*retrive sample post*/
-
+/*
 api.ViewAllPosts(function(err , result){
     if (!err){
         if (result[0].author == "Rushabh Padalia")
@@ -34,32 +33,41 @@ api.ViewAllPosts(function(err , result){
     }
 })
 
+*/
 
-
-/*
-
-  var data =  {
-      author   :"Rushabh Padalia"
-      ,article_image: ["/images/me.jpg"]
-      ,date: new Date()
-      ,tag: ["politics" , "war"]
-      ,title:"This is my Second post"
-      ,content:"This is my first post, let's see if it works"
-      ,likes:0
-      ,comment:[
-         {
+var data =  {
+    author   :"Rushabh Padalia"
+    ,article_image: ["/images/1.jpg"]
+    ,date: new Date()
+    ,tag: ["football" , "Singapore"]
+    ,title:"WooW part 2!!"
+    ,content:"He plays like me"
+    ,like:0
+    ,comment:[
+        {
             by:"hrishikesh"
             ,comment:"I am commenting"
+            ,like:0
             ,date:new Date()
          }
-      ]
+    ]
+}
 
-   }
+try{
+    api.SavePost(data,function(err,blog){
+        if(err){
+            logger("Save to Database test failed");
+        }else{
+            logger("Save to Database test passed");
+        }
+    })
+}
+catch(err){
+     logger("Save to Database test failed");
+}
 
 
-   api.SavePost(data,function(err,blog){
-      if(err)
-         console.log("Error in saving");
-      })
-
-      */
+function logger(msg){
+    console.log(msg);
+    log.info(msg);
+}
