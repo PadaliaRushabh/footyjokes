@@ -9,7 +9,8 @@
     "express": "3.2.6",
     "jade": "*",
     "mongoose":"~3.6.11",
-    "nodeunit": "*"
+    "nodeunit": "*",
+    "log": "*"
   },
   "engines":{
   	"node":"0.10.x"
