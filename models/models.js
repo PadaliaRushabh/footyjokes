@@ -9,6 +9,7 @@
     var Comment = new mongoose.Schema({
       by:String
       ,comment:String
+      ,like:Number
       ,date:Date
    });
 

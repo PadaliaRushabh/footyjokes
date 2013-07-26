@@ -19,6 +19,7 @@ api.prototype.ViewAllPosts = function(callback){
     })
 };
 
+
 //Save a blog to database
 api.prototype.SavePost = function(post_to_save , callback){
       new Post(post_to_save).save(function(err){
