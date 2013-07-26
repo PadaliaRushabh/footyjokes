@@ -1,0 +1,19 @@
+.inputs{
+    padding:5px;
+    width:90%;
+}
+
+.inputs input{
+    margin-top: 10px;
+    width:90%;
+}
+
+body{
+    background-color:#D3D3D3;
+}
+
+.grid{
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+     border-radius: 12px;
+}
