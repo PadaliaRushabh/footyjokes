@@ -1,7 +1,11 @@
+/*
+    DESCRIPTION: Database related unit test
+*/
+
 var Post = require('../models/models.js')
   , fs = require('fs')
-  , Log = require('log')
-  , log = new Log('info', fs.createWriteStream('log' , {'flags': 'a'}))
+  , Log = require('log')// to log our unit test
+  , log = new Log('info', fs.createWriteStream('log' , {'flags': 'a'})) //append the log to a file name log
   , api = new (require('../controllers/DatabaseAPI/api.js').api);
 
 

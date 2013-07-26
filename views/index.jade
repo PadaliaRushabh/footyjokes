@@ -1,5 +1,13 @@
+//-
+    | DESCRIPTION: Main view(Home Page)
+    | WORKING: Get the result object from the index.js
+    | and loop through it to display our grid boxes
+    | TODO: lots of bug fixes and design improvments
+
+
 extends layout
 
+// function(mixin) grid
 mixin grid(box)
     if(typeof(box.title) !== 'undefined')
         strong #{box.title}
@@ -17,8 +25,14 @@ mixin grid(box)
         button(type="button").btn.btn-primary Comment
     .meta #{box.author}
 
+
+//-
+    | call the function grid using +gride(box)
+    | box_obj is the object contaning all the post
+    | value of result is passed into box_obj from index.js
+
 block prepend content
     #container-grid
         each box in box_obj
             .grid
-                +grid(box)
+                +grid(box) 
