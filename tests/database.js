@@ -37,7 +37,7 @@ api.ViewAllPosts(function(err , result){
 
 var data =  {
     author   :"Rushabh Padalia"
-    ,article_image: ["/images/1.jpg"]
+    ,article_image: ["/images/4.jpg"]
     ,date: new Date()
     ,tag: ["football" , "Singapore"]
     ,title:"WooW part 2!!"
