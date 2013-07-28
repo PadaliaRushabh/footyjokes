@@ -11,7 +11,10 @@ $(document).ready(function() {
         var id = "#"+ele_id;
         $(id).toggleClass('oncommentdisplay');
         var ele_txt = "#"+ele_id + " .inputs .comment-textbox "; //get the textbox of the previously found box
-        $(ele_txt).slideToggle('slow'); // on button press hide and unhide comment textbox
+        //$(ele_txt).slideToggle('slow'); // on button press hide and unhide comment textbox
+        $('#myModal')
+            .removeData('modal')
+            .modal('show');
     });
     $('.comment-textbox').hide(); // initially hide out comment textbox
 

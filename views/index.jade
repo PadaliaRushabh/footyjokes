@@ -39,9 +39,6 @@ mixin grid(box)
                     a(href="http://www.facebook.com") Twitter
         button(type="button").btn.btn-primary.comment Comment
         input(type="text").comment-textbox
-
-
-
 //-
     | call the function grid using +gride(box)
     | box_obj is the object contaning all the post
@@ -52,3 +49,10 @@ block prepend content
         each box in box_obj
             div(id=box._id).grid
                 +grid(box)
+    div(tabindex="-1", role="dialog", id="myModal").modal.hide.fade
+        .modal-header
+            h3#myModalLabel Modal header
+        .modal-body
+            p body
+        .modal-footer
+            input(type="text").commenting
