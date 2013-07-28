@@ -15,7 +15,8 @@ $(document).ready(function() {
 		$('#container-grid').BlocksIt({
 			numOfCol: 3,
 			offsetX: 8,
-			offsetY: 8
+			offsetY: 8,
+			blockElement: '.grid'
 		});
 	});
 
@@ -44,7 +45,8 @@ $(document).ready(function() {
 			$('#container-grid').BlocksIt({
 				numOfCol: col,
 				offsetX: 8,
-				offsetY: 8
+				offsetY: 8,
+				blockElement: '.grid'
 			});
 		}
 	});

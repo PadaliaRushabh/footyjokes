@@ -35,8 +35,16 @@ body{
     clear:both;
 }
 
-.comment-textbox{
+.inputs .comment-textbox{
     margin:10px 10px 10px 0;
     width:95%;
+}
 
+
+.oncommentdisplay{
+    /*z-index:1000;*/
+}
+
+.bigbox{
+    border:5px solid;
 }

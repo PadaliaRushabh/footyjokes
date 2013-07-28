@@ -25,9 +25,19 @@ mixin grid(box)
     strongs
     p #{box.content}
     .inputs
-        button(type="button").btn.btn-success.clickable Share
-        button(type="button").btn.btn-warning Share
-        button(type="button").btn.btn-primary Comment
+        button(type="button").btn.btn-success.like Like
+        .btn-group
+            //- a(href="#",data-toggle="dropdown").btn.btn-warning.dropdown-toggle.share Share
+            button(type="button" ,data-toggle="dropdown" ).btn.btn-warning.dropdown-toggle.share Share
+                span.caret
+            ul.dropdown-menu
+                li
+                    a(href="http://www.facebook.com") Facebook
+                li
+                    a(href="http://www.facebook.com") Google+
+                li
+                    a(href="http://www.facebook.com") Twitter
+        button(type="button").btn.btn-primary.comment Comment
         input(type="text").comment-textbox
 
 

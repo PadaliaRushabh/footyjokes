@@ -80,6 +80,7 @@ a:hover, a:active{
 	padding-bottom: 10px;
 
 }
+
 .grid{
 	width:188px;
 	min-height:100px;
@@ -88,7 +89,8 @@ a:hover, a:active{
 	margin:8px;
 	font-size:12px;
 	float:left;
-	border: 0 none;
+	border: 1 none;
+
 	box-shadow: 0 1px 3px rgba(34,25,25,0.4);
 	-moz-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
 	-webkit-box-shadow: 0 1px 3px rgba(34,25,25,0.4);
@@ -117,7 +119,6 @@ a:hover, a:active{
 	display:block;
 	width:100%;
 }
-
 @media screen and (max-width : 1240px) {
 	body{
 		overflow:auto;
