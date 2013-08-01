@@ -84,14 +84,17 @@ function setCols(){
 function setContainerWidth(){
     var winWidth = $(window).width();
     console.log("Width con:" + winWidth);
-    if(winWidth <= 768) {
-		    return 440;
-	    } else if(winWidth < 1000) { //1000
-		    return 660; //660
-	    } else if(winWidth < 1200) { //1100
-		    return 880; //880
-	    } else {
-		    return 1100; //1100
+    if(winWidth <= 480){
+        return 295;
+    }
+    else if(winWidth <= 768) {
+        return 440;
+	} else if(winWidth < 1000) { //1000
+		return 660; //660
+	} else if(winWidth < 1200) { //1100
+		return 880; //880
+	} else {
+		return 1100; //1100
 	    }
 
 }
