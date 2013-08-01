@@ -1,4 +1,12 @@
 
+/* Prevent Textarea from resizing*/
+textarea {
+   resize: none;
+   width:90%;
+}
+
+/************************/
+
 body{
     background-color:#D3D3D3;
 }

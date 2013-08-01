@@ -7,6 +7,15 @@
 
 extends layout
 
+mixin toPost()
+    form
+        .form-actions
+            input(type="text", placeholder="Header goes here..", style="width:100%").header
+            textarea(rows="5", placeholder="Content goes here..", style="width:100%")
+
+            button(type="button").btn.btn-info.btn-block Post
+            input(type="file" ,name="pic" ,accept="image/*")
+
 // function(mixin) grid
 mixin grid(box)
     .profile-display
@@ -46,6 +55,8 @@ mixin grid(box)
 
 block prepend content
     #container-grid
+        div(id='topost').grid
+            +toPost()
         each box in box_obj
             div(id=box._id).grid
                 +grid(box)
@@ -85,4 +96,4 @@ block prepend content
                 | body body body body body body body body body body body body body body body body body body
                 | body body body body body body body body body body body body body body body body body body
         .modal-footer
-            input(type="text").commenting
+            input(type="text", style="width:100%;").commenting
