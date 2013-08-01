@@ -17,7 +17,7 @@ api.prototype.ViewAllPosts = function(callback){
       callback(err , posts);
     });
 };
-
+//Post.find({} , {"msg":{$slice: -2}}).sort({date:-1}).limit(25).....
 
 //Save a blog to database
 api.prototype.SavePost = function(post_to_save , callback){
