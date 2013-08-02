@@ -73,7 +73,7 @@ $(window).load( function() {
 function setCols(){
      var winWidth = $(window).width();
     console.log("Width:" + winWidth);
-     if(winWidth >= 1200)
+     if(winWidth > 1200)
         return 3;
      else if(winWidth > 768 && winWidth < 1200 )
         return 2;

@@ -18,6 +18,8 @@ api.prototype.ViewAllPosts = function(callback){
     });
 };
 //Post.find({} , {"msg":{$slice: -2}}).sort({date:-1}).limit(25).....
+// db.person.find({} , {_id:1}).sort({_id:-1}).skip(1)
+
 
 //Save a blog to database
 api.prototype.SavePost = function(post_to_save , callback){
