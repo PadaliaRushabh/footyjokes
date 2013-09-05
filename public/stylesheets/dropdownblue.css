@@ -1,0 +1,4 @@
+.dropdown-menu li a:hover {
+    color:black;/*color turns white if not changed*/
+    background: none;           
+}
