@@ -6,9 +6,7 @@ html
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-    link(rel='stylesheet', href='/stylesheets/flatstrap.css')
+    link(rel='stylesheet', href='/stylesheets/dropdownblue.css')
     
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,7 +17,11 @@ html
     script(src="javascripts/bootstrap.js")
     script(src="javascripts/delayHF.js")
     script(src ="http://ie7-js.googlecode.com/svn/version/2.1(beta2)/IE8.js")
-    script(type="text/javascript" , src="javascripts/bootstrap.min.js")
+    script(src="javascripts/bootstrap.min.js")
+    script(src="javascripts/google.js")
+    script(src="javascripts/googlecallback.js")
+
+    
     
     
   body
@@ -34,13 +36,18 @@ html
                             
                     .dropdown.pull-right
                         a#dLabel.dropdown-toggle(role="button", data-toggle="dropdown", data-target="#", href="/page.html").brand|Login
-                            ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
-                                    li
-                                        a(tabindex="-1", href="#") Facebook
-                                    li
-                                        a(tabindex="-1", href="#") Twitter
-                                    li
-                                        a(tabindex="-1", href="#") Google+
+                        ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
+                            li
+                                a(tabindex="-1", href="#") Facebook
+                            li
+                                a(tabindex="-1", href="#") Twitter
+                            li
+                                a()
+                                    span#signinButton
+                                        span(data-callback="signinCallback" , data-clientid="943631610737.apps.googleusercontent.com" , data-cookiepolicy="single_host_origin" , data-requestvisibleactions="http://schemas.google.com/AddActivity" , data-scope="https://www.googleapis.com/auth/plus.login").g-signin
+                
+                                            
+                                        
                                                                 
                                                        
 
@@ -49,4 +56,6 @@ html
 
     footer#footer
         a(href="#") About us
+        
+
         a(href="#") Contact
