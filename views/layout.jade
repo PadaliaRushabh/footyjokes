@@ -20,6 +20,8 @@ html
     script(src="javascripts/bootstrap.min.js")
     script(src="javascripts/google.js")
     script(src="javascripts/googlecallback.js")
+    script(src="javascripts/fbloginscript.js")
+
 
     
     
@@ -38,7 +40,9 @@ html
                         a#dLabel.dropdown-toggle(role="button", data-toggle="dropdown", data-target="#", href="/page.html").brand|Login
                         ul.dropdown-menu(role="menu", aria-labelledby="dLabel")
                             li
-                                a(tabindex="-1", href="#") Facebook
+                                a() 
+                                    fb:login-button(show-faces='true', width='200', max-rows='1')
+
                             li
                                 a(tabindex="-1", href="#") Twitter
                             li
