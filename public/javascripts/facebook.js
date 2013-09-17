@@ -26,6 +26,7 @@
                 });
             };
 
+            // Check if login successful
             function login() {
                 FB.login(function(response) {
                     if (response.authResponse) {
@@ -33,23 +34,25 @@
                         testAPI();
                     } else {
                     // cancelled
+                    console.log('Login failed.'); // Unit Test
                     }
                 });
             }
-
+            
+            // Login function + fetch information
             function testAPI() {
                 console.log('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
-                    console.log('Good to see you, ' + response.name + '.');
+                    console.log('Login Passed, good to see you, ' + response.name + '.'); // Unit Test
                     document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
                 });
             }
-
+            
+            // Login function + fetch information
             function callAPI() {
-
                 console.log('Welcome back!  Fetching your information... ');
                 FB.api('/me', function(response) {
-                    console.log('Good to see you, ' + response.name + '.');
+                    console.log('Login Passed, good to see you, ' + response.name + '.'); // Unit Test
                     document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
 
                 });
