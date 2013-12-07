@@ -10,6 +10,7 @@
       by:String
       ,comment:String
       ,like:Number
+      ,like_status:Boolean
       ,date:Date
    });
 
@@ -22,6 +23,7 @@
       ,title:String
       ,content:String
       ,like:Number
+      ,like_status:Boolean
       ,comment:[Comment] //Embedding comments in post becasue comments are part of blog post
    });
 

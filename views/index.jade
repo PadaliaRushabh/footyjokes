@@ -8,13 +8,15 @@
 extends layout
 
 mixin toPost()
-    form
+    form(method="POST", action="InsertPost",enctype="multipart/form-data")
         .form-actions
-            input(type="text", placeholder="Header goes here..", style="width:100%").header
-            textarea(rows="5", placeholder="Content goes here..", style="width:100%")
+            //input(type="hidden", name="user_name", value="Rushabh Padalia") 
+            input(type="text", placeholder="Header goes here..", style="width:100%", name="header").header
+            textarea(rows="5", placeholder="Content goes here..", style="width:100%" , name="content")
 
-            input(type="submit").btn.btn-info.btn-block Post
             input(type="file" ,name="pic" ,accept="image/*")
+            input(type="submit").btn.btn-info.btn-block Post
+            
 
 // function(mixin) grid
 mixin grid(box)
@@ -34,7 +36,10 @@ mixin grid(box)
     strongs
     p #{box.content}
     .inputs
-        button(type="button").btn.btn-success.like Like
+        if(box.like_status == false)
+            button(type="button", value="#{box.like}").btn.btn-success.like Like #{box.like}
+        else
+            button(type="button", value="#{box.like}").btn.btn-danger.like Like #{box.like}
         .btn-group
             //- a(href="#",data-toggle="dropdown").btn.btn-warning.dropdown-toggle.share Share
             button(type="button" ,data-toggle="dropdown" ).btn.btn-warning.dropdown-toggle.share Share
