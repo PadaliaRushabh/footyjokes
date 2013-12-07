@@ -3,8 +3,9 @@
 */
 
 $(document).ready(function() {
+    var ele_id;
     $(".comment").click(function(){
-        var ele_id = $(this)
+        ele_id = $(this)
                 .parent(".inputs")
                 .parent()
                 .attr('id'); // get the parent unique id to get the box on which we have to toggle textbox
@@ -50,6 +51,37 @@ $(document).ready(function() {
         var ele_txt = "#"+ele_id + " .inputs .comment-textbox "; //get the textbox of the previously found box
         //$(ele_txt).slideToggle('slow'); // on button press hide and unhide comment textbox       
     });
+    
+    $(".comment-modal").click(function(event){
+    
+    
+        var comment = $(".comment-textarea").val();
+        var html = '';
+         $.ajax({
+            type:"POST",
+            cache:false,
+            url:"InsertComment",
+            data:{"id": ele_id , "comment": comment},
+            dataType: "json",
+            success:function(comment){
+                    html = html + "<div class='media'>"
+                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + comment.article_image  + "> </a>"
+                    html = html + "<div class='media-body'> <h4 class='media-heading'>" + comment.by +   "</h4>"
+                   // console.log(comment);
+                    html = html + comment.comment
+                    html = html + "</div> </div> <hr>"
+                    
+                    $('#myModal')
+                    .children(".modal-body")
+                    .append(html);
+                    
+                    $(".comment-textarea").val("");
+            }
+        });
+        
+        
+        console.log(ele_id);
+   });
     $('.comment-textbox').hide(); // initially hide out comment textbox
 
 });

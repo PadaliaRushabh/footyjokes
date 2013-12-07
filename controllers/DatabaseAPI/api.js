@@ -105,7 +105,24 @@ api.prototype.updateLikeStatus = function(id , callback){
     });
 };
 
+//Add Comment to post
+api.prototype.AddComment = function(id , comment , callback){
+    //console.log(id);
+    //console.log(comment);
+  Post.findOne({_id : new ObjectId(id)} , function(err , post){
 
+    if(err){
+       callback(err);
+    }
+    else{
+      
+      post.comment.push(comment);
+      post.save(function(err){
+        callback(err , comment);
+      });
+    }
+  });
+};
 
 //so that we can require API in different file
 exports.api = api; 
