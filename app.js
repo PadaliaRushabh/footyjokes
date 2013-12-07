@@ -8,6 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , insert = require('./routes/insert_post')
   , like = require('./routes/like_post')
+  , comment = require('./routes/comment')
   , http = require('http')
   , path = require('path');
 
@@ -40,6 +41,7 @@ if ('development' == app.get('env')) {
 app.get('/',routes.index);
 app.post('/InsertPost' , insert.InsertPost);
 app.post('/LikePost' , like.LikePost);
+app.post('/Comment' , comment.Comment);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){

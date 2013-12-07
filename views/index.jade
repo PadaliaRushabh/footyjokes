@@ -26,7 +26,7 @@ mixin grid(box)
         small.date #{box.date}
     .clear
     if(typeof(box.title) !== 'undefined')
-        strong #{box.title}
+        strong.title #{box.title}
     if(typeof(box.article_image) !== 'undefined')
         .imgholder
             img(src='#{box.article_image[0]}' ,alt="").img-rounded
@@ -69,36 +69,7 @@ block prepend content
         .modal-header
             h3#myModalLabel Modal header
         .modal-body
-            p
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
-                | body body body body body body body body body body body body body body body body body body
+            
         .modal-footer
-            input(type="text", style="width:100%;").commenting
+            textarea(rows="2" ,width="100%").pull-left
+            button(type="button").btn.btn-primary.comment.pull-left Comment

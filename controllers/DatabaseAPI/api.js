@@ -28,6 +28,27 @@ api.prototype.SavePost = function(post_to_save , callback){
    });
 };
 
+//get one post
+api.prototype.GetPost = function(id , callback){
+  Post.findOne({_id : new ObjectId(id)} , function(err , post){
+    if(err){
+       console.log(err);
+    }
+    else{
+        callback(err , post);
+    }
+  });
+};
+
+//get all comment of one post
+/*api.prototype.GetPostComment = function(id , callback){
+
+    //if(err) console.log(err);
+    GetPost(id , function(err , post){
+        callback(err , post.comment)
+    });
+};*/
+
 //Like post
 api.prototype.LikePost = function(id , callback){
 
@@ -83,5 +104,8 @@ api.prototype.updateLikeStatus = function(id , callback){
         });
     });
 };
+
+
+
 //so that we can require API in different file
 exports.api = api; 

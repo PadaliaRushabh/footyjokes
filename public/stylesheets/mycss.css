@@ -56,3 +56,7 @@ body{
 .bigbox{
     border:5px solid;
 }
+
+#myModal .modal-body{
+    max-height:200px;
+}

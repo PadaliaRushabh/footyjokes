@@ -3,7 +3,7 @@ var api = new (require('../controllers/DatabaseAPI/api.js').api);
 exports.LikePost = function(req, res){
     
     var id = req.body.id; 
-    var like = req.body.like;
+    //var like = req.body.like;
     
     //console.log(id);
     //console.log(like);
