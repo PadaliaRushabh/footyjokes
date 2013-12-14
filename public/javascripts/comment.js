@@ -65,7 +65,7 @@ $(document).ready(function() {
             dataType: "json",
             success:function(comment){
                     html = html + "<div class='media'>"
-                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + comment.article_image  + "> </a>"
+                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + "images/me.jpg" + "> </a>"
                     html = html + "<div class='media-body'> <h4 class='media-heading'>" + comment.by +   "</h4>"
                    // console.log(comment);
                     html = html + comment.comment

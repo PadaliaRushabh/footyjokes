@@ -39,7 +39,7 @@ mixin grid(box)
         if(box.like_status == false)
             button(type="button", value="#{box.like}").btn.btn-success.like Like #{box.like}
         else
-            button(type="button", value="#{box.like}").btn.btn-danger.like Like #{box.like}
+            button(type="button", valuetoPost="#{box.like}").btn.btn-danger.like Like #{box.like}
         .btn-group
             //- a(href="#",data-toggle="dropdown").btn.btn-warning.dropdown-toggle.share Share
             button(type="button" ,data-toggle="dropdown" ).btn.btn-warning.dropdown-toggle.share Share
@@ -65,6 +65,7 @@ block prepend content
         each box in box_obj
             div(id=box._id).grid
                 +grid(box)
+        div().next
     div(tabindex="-1", role="dialog", id="myModal").modal.hide.fade
         .modal-header
             h3#myModalLabel Modal header

@@ -1,0 +1,40 @@
+// function(mixin) grid
+mixin grid(box)
+    .profile-display
+        img(src='images/me.jpg').img-circle.profile-pic
+        small.name #{box.author}
+        small.date #{box.date}
+    .clear
+    if(typeof(box.title) !== 'undefined')
+        strong.title #{box.title}
+    if(typeof(box.article_image) !== 'undefined')
+        .imgholder
+            img(src='#{box.article_image[0]}' ,alt="").img-rounded
+    else
+        .imgholder
+            img(src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img23.jpg")
+    strongs
+    p #{box.content}
+    .inputs
+        if(box.like_status == false)
+            button(type="button", value="#{box.like}").btn.btn-success.like Like #{box.like}
+        else
+            button(type="button", valuetoPost="#{box.like}").btn.btn-danger.like Like #{box.like}
+        .btn-group
+            //- a(href="#",data-toggle="dropdown").btn.btn-warning.dropdown-toggle.share Share
+            button(type="button" ,data-toggle="dropdown" ).btn.btn-warning.dropdown-toggle.share Share
+                span.caret
+            ul.dropdown-menu
+                li
+                    a(href="http://www.facebook.com") Facebook
+                li
+                    a(href="http://www.facebook.com") Google+
+                li
+                    a(href="http://www.facebook.com") Twitter
+        button(type="button").btn.btn-primary.comment Comment
+        input(type="text").comment-textbox
+        
+        
+each box in box_obj
+    div(id=box._id).grid
+        +grid(box)

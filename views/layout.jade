@@ -18,6 +18,9 @@ html
     script(src="javascripts/delayHF.js")
     script(src="javascripts/comment.js")
     script(src="javascripts/like.js")
+    script(src="javascripts/load.js")
+    script(src="javascripts/login.js")
+    script(src="javascripts/facebook.js")
   body
 
     script(src="javascripts/bootstrap.min.js")
@@ -26,9 +29,9 @@ html
             .navbar-inner
                 .container-fluid
                     a(href="#").brand FootyJokes
-                    ul.nav
-                        form(id="nav-search" , action="#" , method="post").navbar-search.pull-left
-                            input(type="text", placeholder="search post").search-query
+                    ul.nav.pull-right
+                        img(src="images/facebook.png", width="40px", height="40px").login
+                        
 
     .container
         block content
