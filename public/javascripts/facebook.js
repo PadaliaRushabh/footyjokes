@@ -29,7 +29,7 @@
                 FB.login(function(response) {
                     if (response.authResponse) {
                     // connected
-                        testAPI();
+                        callAPI();
                     } else {
                     // cancelled
                     }
@@ -55,7 +55,7 @@
                 );
             }
 
-            function testAPI() {
+            /*function testAPI() {
                 console.log('Welcome!  Fetching your information.... ');
                 FB.api('/me', function(response) {
                     console.log('Good to see you, ' + response.name +" your id" +response.id+ '.');
@@ -63,7 +63,7 @@
                     var img_link = "http://graph.facebook.com/"+response.id+"/picture"
                     //document.getElementById('img-print').innerHTML = "<img src=" + img_link + ">" + "</img>"
                 });
-            }
+            }*/
 
             function callAPI() {
 
@@ -73,7 +73,9 @@
                     //document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
 
                 var img_link = "http://graph.facebook.com/"+response.id+"/picture"
-                //document.getElementById('img-print').innerHTML = "<img src=" + img_link + ">" + "</img>"
+                var html = "<img src=" + img_link + ">" + "</img>"
+                $('.login').html(html);
+                
                 });
             }
 

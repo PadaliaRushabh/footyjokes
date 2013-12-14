@@ -1,5 +1,5 @@
 $(document).ready( function(){
-    $('.login').click(function(event){
+    $('#facebook-login').click(function(event){
        login();
     });
 });
