@@ -40,7 +40,7 @@
                 {
                     method: 'feed',
                     name: title,
-                    link: 'https://footyjokes.herokuapp.com',
+                    link: 'http://footyjokes.herokuapp.com',
                     picture: pic,
                     caption: title,
                     description: description
