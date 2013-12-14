@@ -33,8 +33,9 @@ mixin grid(box)
     else
         .imgholder
             img(src="http://www.inwebson.com/demo/blocksit-js/demo2/images/img23.jpg")
-    strongs
-    p #{box.content}
+    strong
+    .content
+        p #{box.content}
     .inputs
         if(box.like_status == false)
             button(type="button", value="#{box.like}").btn.btn-success.like Like #{box.like}
@@ -46,11 +47,11 @@ mixin grid(box)
                 span.caret
             ul.dropdown-menu
                 li
-                    a(href="http://www.facebook.com") Facebook
+                    a(href="#").facebook-share Facebook
                 li
-                    a(href="http://www.facebook.com") Google+
+                    a(href="http://www.facebook.com").google-share Google+
                 li
-                    a(href="http://www.facebook.com") Twitter
+                    a(href="http://www.facebook.com").twitter-share Twitter
         button(type="button").btn.btn-primary.comment Comment
         input(type="text").comment-textbox
 //-
