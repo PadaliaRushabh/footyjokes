@@ -14,11 +14,11 @@
                         // connected
                         callAPI();
                     } else if (response.status === 'not_authorized') {
-                        document.getElementById('print').innerHTML = "You are not logged in";
+                        //document.getElementById('print').innerHTML = "You are not logged in";
                         // not_authorized
                         //login();
                     } else {
-                        document.getElementById('print').innerHTML = "You are not logged in";
+                        //document.getElementById('print').innerHTML = "You are not logged in";
                         // not_logged_in
                         //login();
                     }
