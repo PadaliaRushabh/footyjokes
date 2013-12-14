@@ -40,7 +40,7 @@
                 {
                     method: 'feed',
                     name: title,
-                    link: 'https://developers.facebook.com/docs/dialogs/',
+                    link: 'https://footyjokes.herokuapp.com',
                     picture: pic,
                     caption: title,
                     description: description
