@@ -84,7 +84,7 @@
                     type:"POST",
                     cache:false,
                     url:"Login",
-                    data:{"login_id": id},
+                    data:{"login_id": id , "login_name:": response.name},
                     success: function(){
                         console.log("success");
                     }

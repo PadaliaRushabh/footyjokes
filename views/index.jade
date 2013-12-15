@@ -40,7 +40,7 @@ mixin grid(box)
         if(box.like_status == false)
             button(type="button", value="#{box.like}").btn.btn-success.like Like #{box.like}
         else
-            button(type="button", valuetoPost="#{box.like}").btn.btn-danger.like Like #{box.like}
+            button(type="button", value="#{box.like}").btn.btn-danger.like Like #{box.like}
         .btn-group
             //- a(href="#",data-toggle="dropdown").btn.btn-warning.dropdown-toggle.share Share
             button(type="button" ,data-toggle="dropdown" ).btn.btn-warning.dropdown-toggle.share Share
