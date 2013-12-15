@@ -130,13 +130,11 @@ api.prototype.login = function(login_id , callback){
     
         console.log(user)
         if(user == undefined || user == ""){
-            new Login(login_id.save(function(err){
+            new Login(login_id).save(function(err){
                 callback(err);
-            });
-        }
-    
+            })
+        };
     });
-
 };
 
 //so that we can require API in different file
