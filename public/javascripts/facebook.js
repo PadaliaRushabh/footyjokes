@@ -88,7 +88,7 @@
                     success: function(){
                         console.log("success");
                     }
-               )};
+               });
             }
 
               // Load the SDK Asynchronously
