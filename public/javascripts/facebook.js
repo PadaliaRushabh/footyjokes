@@ -72,11 +72,23 @@
                     console.log('Good to see you, ' + response.name +" your id" +response.id+ '.');
                     //document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
 
-                var img_link = "http://graph.facebook.com/"+response.id+"/picture"
-                var html = "<img src=" + img_link + ">" + "</img>"
-                $('.login').html(html);
-                
+                    var img_link = "http://graph.facebook.com/"+response.id+"/picture"
+                    var html = "<img src=" + img_link + ">" + "</img>"
+                    $('.login').html(html);
+                    loginFacebook(response.id);
                 });
+            }
+            
+            function loginFacebook(id){
+                $.ajax({
+                    type:"POST",
+                    cache:false,
+                    url:"Login",
+                    data:{"login_id": id},
+                    success: function(){
+                        console.log("success");
+                    }
+               )};
             }
 
               // Load the SDK Asynchronously
