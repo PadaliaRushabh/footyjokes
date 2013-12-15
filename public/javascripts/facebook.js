@@ -75,16 +75,16 @@
                     var img_link = "http://graph.facebook.com/"+response.id+"/picture"
                     var html = "<img src=" + img_link + ">" + "</img>"
                     $('.login').html(html);
-                    loginFacebook(response.id + "");
+                    loginFacebook(response.id + "" , response.name);
                 });
             }
             //loginFacebook("43434j34i3j4");
-            function loginFacebook(id){
+            function loginFacebook(id, name){
                 $.ajax({
                     type:"POST",
                     cache:false,
                     url:"Login",
-                    data:{"login_id": id , "login_name:": response.name},
+                    data:{"login_id": id , "login_name:":name},
                     success: function(){
                         console.log("success");
                     }
