@@ -126,9 +126,10 @@ api.prototype.AddComment = function(id , comment , callback){
 };
 
 api.prototype.login = function(login_id , callback){
-    Login.findOne({login_id:login_id} , function(err , user){
+    Login.findOne(login_id , function(err , user){
     
         console.log(user)
+       
         if(user == undefined || user == ""){
             new Login(login_id).save(function(err){
                 callback(err);

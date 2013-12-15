@@ -75,10 +75,10 @@
                     var img_link = "http://graph.facebook.com/"+response.id+"/picture"
                     var html = "<img src=" + img_link + ">" + "</img>"
                     $('.login').html(html);
-                    loginFacebook(response.id);
+                    loginFacebook(response.id + "");
                 });
             }
-            
+            //loginFacebook("43434j34i3j4");
             function loginFacebook(id){
                 $.ajax({
                     type:"POST",
