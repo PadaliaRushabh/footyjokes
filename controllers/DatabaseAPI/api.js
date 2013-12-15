@@ -5,6 +5,7 @@
 var ObjectId = require('mongoose').Types.ObjectId;
 // require models and mongoose to interact with database
 var Post = require('../../models/models.js')
+    ,Login = require('../../models/user.js')
     ,mongoose = require('mongoose');
 
 //connect to our cloud database server
@@ -122,6 +123,20 @@ api.prototype.AddComment = function(id , comment , callback){
       });
     }
   });
+};
+
+api.prototype.login = function(login_id , callback){
+    Login.findOne({login_id:login_id} , function(err , user){
+    
+        console.log(user)
+        if(user == undefined || user == ""){
+            new Login(login_id.save(function(err){
+                callback(err);
+            });
+        }
+    
+    });
+
 };
 
 //so that we can require API in different file

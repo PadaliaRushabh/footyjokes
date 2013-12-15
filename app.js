@@ -11,6 +11,7 @@ var express = require('express')
   , comment = require('./routes/comment')
   , insertcomment = require('./routes/insert_comment')
   , boxes = require('./routes/box')
+  , login = require('./routes/login')
   , http = require('http')
   , path = require('path');
 
@@ -46,6 +47,7 @@ app.post('/LikePost' , like.LikePost);
 app.post('/Comment' , comment.Comment);
 app.post('/InsertComment' , insertcomment.InsertComment);
 app.post('/Boxes' , boxes.Boxes);
+app.post('/Login' , login.Login);
 app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
