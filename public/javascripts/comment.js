@@ -61,7 +61,7 @@ $(document).ready(function() {
             type:"POST",
             cache:false,
             url:"InsertComment",
-            data:{"id": ele_id , "comment": comment},
+            data:{"id": ele_id , "comment": comment  ,"login_id": id},
             dataType: "json",
             success:function(comment){
                     html = html + "<div class='media'>"

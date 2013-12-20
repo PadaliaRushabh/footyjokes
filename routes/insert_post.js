@@ -18,7 +18,8 @@ exports.InsertPost = function(req, res){
             if(err) console.log(err);
         
             var data =  {
-            author   : req.session.username
+            login_id: req.body.login_id
+            ,author   : req.session.username
             ,article_image: ["/images/" + imagename + extension]
             ,date: new Date()
             ,tag: ["football" , "Singapore"]
@@ -27,13 +28,7 @@ exports.InsertPost = function(req, res){
             ,like:0
             ,like_status:false
             ,comment:[
-                    {
-                        by:"hrishikesh"
-                        ,comment:"I am commenting"
-                        ,like:0
-                        ,like_status:false
-                        ,date:new Date()
-                    }
+                  
                 ]
             }
             api.SavePost(data , function(err){

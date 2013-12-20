@@ -1,4 +1,5 @@
 // Additional JS functions here
+              id = "";
               window.fbAsyncInit = function() {
                 FB.init({
                   appId      : '694932300523066', // App ID
@@ -71,7 +72,7 @@
                 FB.api('/me', function(response) {
                     console.log('Good to see you, ' + response.name +" your id" +response.id+ '.');
                     //document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
-
+                    id=response.id;
                     var img_link = "http://graph.facebook.com/"+response.id+"/picture"
                     var html = "<img src=" + img_link + ">" + "</img>"
                     $('.login').html(html);
@@ -84,7 +85,7 @@
                     type:"POST",
                     cache:false,
                     url:"Login",
-                    data:{"login_id": id , "login_name:":name},
+                    data:{"login_id": id , "login_name":name , "login_id":"facebook"},
                     success: function(){
                         console.log("success");
                     }

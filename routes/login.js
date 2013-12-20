@@ -4,9 +4,11 @@ exports.Login = function(req, res){
 
     var id = req.body.login_id;
     var name = req.body.login_name;
+    var type = req.body.type;
     
     var post_to_save = {
             login_id:id
+            ,type:type
     }
     
     req.session.username = name ;

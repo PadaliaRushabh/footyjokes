@@ -7,7 +7,8 @@
 
     /* To store comments*/
     var Comment = new mongoose.Schema({
-      by:String
+       login_id:String
+      ,by:String
       ,comment:String
       ,like:Number
       ,like_status:Boolean
@@ -16,7 +17,8 @@
 
     /*To store the post content*/
     var Post = new mongoose.Schema({
-      author:String
+       login_id:String
+      ,author:String
       ,article_image:[String]
       ,date:Date
       ,tag:[String]

@@ -9,8 +9,7 @@ extends layout
 
 mixin toPost()
     form(method="POST", action="InsertPost",enctype="multipart/form-data")
-        .form-actions
-            //input(type="hidden", name="user_name", value="Rushabh Padalia") 
+        .form-actions 
             input(type="text", placeholder="Header goes here..", style="width:100%", name="header").header
             textarea(rows="5", placeholder="Content goes here..", style="width:100%" , name="content")
 
