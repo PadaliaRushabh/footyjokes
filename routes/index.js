@@ -10,9 +10,17 @@ use the ViewAllPosts function from Database API to fetch all posts in Database
 and if no error then render with passing the result variable in index.jade
 */
 exports.index = function(req, res){
-    api.ViewAllPosts(function(err , result){
+    /*api.ViewAllPosts("723354327" , function(err , result , likes_post){
         if(!err)
             //req.session.username = "Rushabh Padalia";
-            res.render('index', { title: 'FootyJokes' , box_obj:result });
-    })
+            
+            /*api.getLikeStatus2("", "" , function(){
+            
+               
+            });
+            //console.log( likes_post);
+            res.render('index', { title: 'FootyJokes' , box_obj:result  , likes_post:likes_post});
+           
+    })*/
+     res.render('index', { title: 'FootyJokes'});
 };

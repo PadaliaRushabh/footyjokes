@@ -15,12 +15,18 @@ api = function(){};
 //fetch all blogs from database
 api.prototype.ViewAllPosts = function(callback){
     Post.find({}).sort({date:-1}).limit(25).execFind(function(err , posts){
-      callback(err , posts);
+        callback(err , posts)
+        
     });
 };
 //Post.find({} , {"msg":{$slice: -2}}).sort({date:-1}).limit(25).....
 // db.person.find({} , {_id:1}).sort({_id:-1}).skip(1)
-
+api.prototype.getLikeId = function(user_id , callback){
+    if(user_id != null || user_id!= undefined || user_id!= "")
+            Post.find({'like_users':user_id} , {"_id":1}).execFind(function(err , id){
+                callback(err , id);
+        });
+};
 
 //Save a blog to database
 api.prototype.SavePost = function(post_to_save , callback){
@@ -51,31 +57,41 @@ api.prototype.GetPost = function(id , callback){
 };*/
 
 //Like post
-api.prototype.LikePost = function(id , callback){
+api.prototype.LikePost = function(id , user_id,callback){
 
-    getLikeStatus(id , function(err , like_status){
-        if(like_status != undefined)
+    getLikeStatus(id , user_id,function(err , like_found){
+        /*if(like_status == 0)
             var likeStatus = like_status.toString() === "true" ? true : false;
         else
-            var likeStatus = false;
-        if(!likeStatus){
-            Post.update({_id : new ObjectId(id)} , {$inc:{like:1}} , function(err,output){
-                callback(err , output);
+            var likeStatus = false;*/
+            //console.log(like_found)
+        //var likeStatus = like_found == 1 ? true : false;
+        if(like_found == 0){
+            Post.update({_id : new ObjectId(id)} , {$inc:{like:1}} , function(err,post){
+                Post.findOne({_id : new ObjectId(id)} , function(err , post){
+                    console.log(post)
+                    post.like_users.push(user_id);
+                    post.save(function(err){
+                        callback(err ,like_found,post);
+                    });
+                
+                });   //callback(err , output);   
             });
         }
         else{
-            UnlikePost(id , function(err , output){
-                 callback(err , output);
+            UnlikePost(id , user_id, function(err , post){
+                 callback(err , like_found,post);
             });
         }
     });
 };
 
 //Unlike post
-var UnlikePost = function(id , callback){
-    Post.update({_id : new ObjectId(id)} , {$inc:{like:-1}} , function(err,output){
-    callback(err , output);
- });
+var UnlikePost = function(id , user_id,callback){
+    Post.update({_id : new ObjectId(id)} , {$inc:{like:-1} ,$pull:{like_users:user_id}} , function(err,output){
+        
+        callback(err , output);
+    });
 };
 
 //Get Like
@@ -87,12 +103,22 @@ api.prototype.getLike = function(id , callback){
 };
 
 //Get Like Status
-var getLikeStatus = function(id , callback){
+/*var getLikeStatus = function(id , callback){
     Post.findOne({_id : new ObjectId(id)} , function(err , post){
             
         callback(err , post.like_status);
     });
+};*/
+
+//Get Like Status
+var getLikeStatus = function(id , user_id,callback){
+    Post.count({_id : new ObjectId(id) , 'like_users':user_id}  , function(err , count){
+            
+        callback(err , count);
+        //console.log(post)
+    });
 };
+
 
 api.prototype.updateLikeStatus = function(id , callback){  
     getLikeStatus(id , function(err , like_status){

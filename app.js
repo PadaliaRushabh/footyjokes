@@ -8,6 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , insert = require('./routes/insert_post')
   , like = require('./routes/like_post')
+  , likeID = require('./routes/like_id')
   , comment = require('./routes/comment')
   , insertcomment = require('./routes/insert_comment')
   , boxes = require('./routes/box')
@@ -44,6 +45,7 @@ if ('development' == app.get('env')) {
 app.get('/',routes.index);
 app.post('/InsertPost' , insert.InsertPost);
 app.post('/LikePost' , like.LikePost);
+app.post('/LikeID' , likeID.LikeID);
 app.post('/Comment' , comment.Comment);
 app.post('/InsertComment' , insertcomment.InsertComment);
 app.post('/Boxes' , boxes.Boxes);

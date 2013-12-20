@@ -22,11 +22,11 @@ exports.InsertPost = function(req, res){
             ,author   : req.session.username
             ,article_image: ["/images/" + imagename + extension]
             ,date: new Date()
-            ,tag: ["football" , "Singapore"]
+            ,tag: []
             ,title:req.body.header
             ,content:req.body.content
             ,like:0
-            ,like_status:false
+            ,like_users:[]  
             ,comment:[
                   
                 ]

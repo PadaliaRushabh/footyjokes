@@ -11,7 +11,7 @@
       ,by:String
       ,comment:String
       ,like:Number
-      ,like_status:Boolean
+      ,like_users:[String]
       ,date:Date
    });
 
@@ -25,7 +25,7 @@
       ,title:String
       ,content:String
       ,like:Number
-      ,like_status:Boolean
+      ,like_users:[String]
       ,comment:[Comment] //Embedding comments in post becasue comments are part of blog post
    });
 

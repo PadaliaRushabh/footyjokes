@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     var ele_id;
-    $(".comment").click(function(){
+    $("div.now").on("click" ,".comment" ,function(){
         ele_id = $(this)
                 .parent(".inputs")
                 .parent()
@@ -51,10 +51,8 @@ $(document).ready(function() {
         var ele_txt = "#"+ele_id + " .inputs .comment-textbox "; //get the textbox of the previously found box
         //$(ele_txt).slideToggle('slow'); // on button press hide and unhide comment textbox       
     });
-    
-    $(".comment-modal").click(function(event){
-    
-    
+     
+     $("div.modal").on("click" , ".comment-modal" , function(event){
         var comment = $(".comment-textarea").val();
         var html = '';
          $.ajax({
