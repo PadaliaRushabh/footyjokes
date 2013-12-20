@@ -85,7 +85,7 @@
                     type:"POST",
                     cache:false,
                     url:"Login",
-                    data:{"login_id": id , "login_name":name , "login_id":"facebook"},
+                    data:{"login_id": id , "login_name":name , "type":"facebook"},
                     success: function(){
                         console.log("success");
                     }
