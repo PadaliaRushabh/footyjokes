@@ -9,7 +9,7 @@ exports.InsertComment = function(req, res){
     
     var comment_obj = {
         login_id: req.body.login_id,
-        by : req.session.username,
+        by:req.session.username,
         user_image:image,
         comment:comments,
         like:0,
