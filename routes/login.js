@@ -13,6 +13,7 @@ exports.Login = function(req, res){
     }
    
     req.session.username = name ;
+    console.log("User Name "  + req.session.username);
     api.login(post_to_save, function(err){
         
         res.end();

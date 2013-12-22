@@ -84,6 +84,7 @@
             }
             //loginFacebook("43434j34i3j4");
             function loginFacebook(id, name){
+                console.log("name is " + name)
                 $.ajax({
                     type:"POST",
                     cache:false,

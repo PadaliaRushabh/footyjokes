@@ -22,5 +22,7 @@ exports.index = function(req, res){
             res.render('index', { title: 'FootyJokes' , box_obj:result  , likes_post:likes_post});
            
     })*/
+    //req.session.username = "Rushabh"
+    //console.log(req.session.username)
      res.render('index', { title: 'FootyJokes'});
 };
