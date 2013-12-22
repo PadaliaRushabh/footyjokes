@@ -5,7 +5,7 @@ exports.InsertComment = function(req, res){
     var id = req.body.id;
     var comments = req.body.comment;
     var image = req.body.user_image;
-    console.log(req.session.username)
+    console.log("session:" + req.session.username)
     
     var comment_obj = {
         login_id: req.body.login_id,
