@@ -22,7 +22,7 @@ $(document).ready(function() {
                 //console.log(res_post);
                 res_post.comment.forEach(function(comment){
                     html = html + "<div class='media'>"
-                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + res_post.article_image  + "> </a>"
+                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + comment.user_image  + "> </a>"
                     html = html + "<div class='media-body'> <h4 class='media-heading'>" + comment.by +   "</h4>"
                    // console.log(comment);
                     html = html + comment.comment
@@ -55,15 +55,20 @@ $(document).ready(function() {
      $("div.modal").on("click" , ".comment-modal" , function(event){
         var comment = $(".comment-textarea").val();
         var html = '';
+        if(type === "facebook"){
+            var img_link = "http://graph.facebook.com/"+id+"/picture"
+        }
          $.ajax({
             type:"POST",
             cache:false,
             url:"InsertComment",
-            data:{"id": ele_id , "comment": comment  ,"login_id": id},
+            data:{"id": ele_id , "comment": comment  ,"login_id": id , "user_image":img_link},
             dataType: "json",
+            
             success:function(comment){
+            console.log(comment)
                     html = html + "<div class='media'>"
-                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + "images/me.jpg" + "> </a>"
+                    html = html + "<a class='pull-left' href='#'> <img class='media-object' width='45px' height='20px' src= " + img_link + "> </a>"
                     html = html + "<div class='media-body'> <h4 class='media-heading'>" + comment.by +   "</h4>"
                    // console.log(comment);
                     html = html + comment.comment
@@ -76,8 +81,7 @@ $(document).ready(function() {
                     $(".comment-textarea").val("");
             }
         });
-        
-        
+              
         console.log(ele_id);
    });
     $('.comment-textbox').hide(); // initially hide out comment textbox

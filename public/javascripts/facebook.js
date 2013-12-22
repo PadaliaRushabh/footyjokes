@@ -1,5 +1,6 @@
 // Additional JS functions here
               id = "723354327";
+              type = "facebook";
               window.fbAsyncInit = function() {
                 FB.init({
                   appId      : '694932300523066', // App ID
@@ -73,10 +74,12 @@
                     console.log('Good to see you, ' + response.name +" your id" +response.id+ '.');
                     //document.getElementById('print').innerHTML = "You are logged in\nWelcome back!\nGood to see you, " + response.name;
                     id=response.id;
+                    type="facebook";
                     var img_link = "http://graph.facebook.com/"+response.id+"/picture"
                     var html = "<img src=" + img_link + ">" + "</img>"
                     $('.login').html(html);
                     loginFacebook(response.id + "" , response.name);
+                    
                 });
             }
             //loginFacebook("43434j34i3j4");

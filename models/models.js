@@ -9,6 +9,7 @@
     var Comment = new mongoose.Schema({
        login_id:String
       ,by:String
+      ,user_image:String
       ,comment:String
       ,like:Number
       ,like_users:[String]
