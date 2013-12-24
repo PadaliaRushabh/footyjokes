@@ -35,5 +35,5 @@ exports.index = function(req, res){
          res.render('index', { title: 'FootyJokes'});
     });*/
     
-    
+     res.render('index', { title: 'FootyJokes'});
 };
