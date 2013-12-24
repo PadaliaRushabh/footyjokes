@@ -24,5 +24,6 @@ exports.index = function(req, res){
     })*/
     //req.session.username = "Rushabh"
     //console.log(req.session.username)
+    //req.session.user_name = "Rushabh"
      res.render('index', { title: 'FootyJokes'});
 };
