@@ -17,6 +17,7 @@ var express = require('express')
   , path = require('path');
 
 var app = express();
+var MongoStore = require('connect-mongo')(express);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
