@@ -27,7 +27,11 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.cookieParser()); // before router
-app.use(express.session({ secret:"aaa"})); //before router 
+store: new MongoStore({
+    url: 'mongodb://rushabh-testing:rushabh-testing@ds061278.mongolab.com:61278/session'
+  }),
+  secret: '1234567890QWERTY'
+}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
