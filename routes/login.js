@@ -14,10 +14,10 @@ exports.Login = function(req, res){
    
     req.session.user_name = name ;
     //console.log("User Name "  + req.session.user_name);
-    /*api.login(post_to_save, function(err){
+    api.login(post_to_save, function(err , user){
         
         res.end();
-    });*/
+    });
     
-    res.end();
+    //res.end();
 };

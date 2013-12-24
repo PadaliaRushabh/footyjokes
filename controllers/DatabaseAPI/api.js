@@ -158,9 +158,12 @@ api.prototype.login = function(login_id , callback){
        
         if(user == undefined || user == ""){
             new Login(login_id).save(function(err){
-                callback(err);
+                callback(err , user);
             })
-        };
+        }  else {
+             callback(err , user);
+        }
+        
     });
 };
 

@@ -25,5 +25,15 @@ exports.index = function(req, res){
     //req.session.username = "Rushabh"
     //console.log(req.session.username)
     //req.session.user_name = "Rushabh"
-     res.render('index', { title: 'FootyJokes'});
+    /*var post_to_save = {
+            login_id:"23232323"
+            ,type:"google"
+    }
+      api.login(post_to_save, function(err , user){
+        
+        if(err) console.log(err);
+         res.render('index', { title: 'FootyJokes'});
+    });*/
+    
+    
 };
