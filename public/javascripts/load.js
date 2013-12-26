@@ -22,7 +22,7 @@ $(document).ready(function(){
                     type:"POST",
                     cache:false,
                     url:"LikeID",
-                    data:{"count": 0 , "user_id":id},
+                    data:{"count": 0},
                     dataType: "json", 
                     success: function(Objid){
                         Objid.forEach(function(id){
