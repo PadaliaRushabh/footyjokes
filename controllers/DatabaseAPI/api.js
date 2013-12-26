@@ -23,7 +23,7 @@ api.prototype.ViewAllPosts = function(callback){
 // db.person.find({} , {_id:1}).sort({_id:-1}).skip(1)
 api.prototype.getLikeId = function(user_id , callback){
     if(user_id != null || user_id!= undefined || user_id!= "")
-            Post.find({'like_users':user_id} , {"_id":1}).execFind(function(err , id){
+            Post.find({'like_users':user_id} , {"_id":1 , "like_users":1}).execFind(function(err , id){
                 callback(err , id);
         });
 };

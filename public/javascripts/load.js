@@ -26,8 +26,13 @@ $(document).ready(function(){
                     dataType: "json", 
                     success: function(Objid){
                         Objid.forEach(function(id){
-     
-                        $("#" + id._id).children(".inputs").children("button:first").addClass('btn-danger').removeClass('btn-success'); 
+                        
+                        if(id == id.like_users){
+                            $("#" + id._id).children(".inputs").children("button:first").addClass('btn-danger').removeClass('btn-success'); 
+                        } else {
+                            continue;  
+                        }
+                         
         
                         })
                     }

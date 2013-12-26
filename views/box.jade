@@ -26,11 +26,16 @@ mixin grid(box)
                 li
                     a(href="#").facebook-share Facebook
                 li
-                    a(href="http://www.facebook.com") Google+
+                    a(href="#" ,class="demo g-interactivepost"
+    ,data-clientid="856043171652-kd4u05chu43k85d44lkbfeub747gksjj.apps.googleusercontent.com"
+    ,data-contenturl="http://footyjokes.herokuapp.com/public" + box.article_image[0]
+    ,data-calltoactionlabel="VIEW"
+    ,data-calltoactionurl="http://footyjokes.herokuapp.com"
+    ,data-cookiepolicy="single_host_origin"
+    data-prefilltext=box.content).google-share Google+
                 li
                     a(href="http://www.facebook.com") Twitter
         button(type="button").btn.btn-primary.comment Comment
-        input(type="text").comment-textbox
         
         
 each box in box_obj

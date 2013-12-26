@@ -19,7 +19,7 @@ exports.InsertPost = function(req, res){
         
             var data =  {
             login_id: req.body.login_id
-            ,author:req.session.username
+            ,author:req.session.user_name
             ,article_image: ["/images/" + imagename + extension]
             ,date: new Date()
             ,tag: []
