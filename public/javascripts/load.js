@@ -26,7 +26,7 @@ $(document).ready(function(){
                     dataType: "json", 
                     success: function(Objid){
                         Objid.forEach(function(id){
-                        
+                            console.log(id)
                             if(id._id!= '' || id._id!=null) {
                                 $("#" + id._id).children(".inputs").children("button:first").addClass('btn-danger').removeClass('btn-success');
                             } 

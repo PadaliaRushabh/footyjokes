@@ -4,6 +4,7 @@ exports.Login = function(req, res){
 
     var id = req.body.login_id;
     var name = req.body.login_name;
+    var type = req.body.type;
     //var name = "Rushabh Padalia"
     var type = req.body.type;
     
@@ -13,6 +14,8 @@ exports.Login = function(req, res){
     }
    
     req.session.user_name = name ;
+    req.session.id = id ;
+    req.session.login_type = type ;
     //console.log("User Name "  + req.session.user_name);
     api.login(post_to_save, function(err , user){
         
