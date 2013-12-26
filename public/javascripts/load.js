@@ -17,7 +17,7 @@ $(document).ready(function(){
                 $(".now").append(boxHTML);
             
     
-                console.log(id)
+               //console.log(id)
                 $.ajax({
                     type:"POST",
                     cache:false,
@@ -27,9 +27,9 @@ $(document).ready(function(){
                     success: function(Objid){
                         Objid.forEach(function(id){
                             console.log(id)
-                            if(id._id!= '' || id._id!=null) {
+    
                                 $("#" + id._id).children(".inputs").children("button:first").addClass('btn-danger').removeClass('btn-success');
-                            } 
+                            
                         
                         })
                     }
