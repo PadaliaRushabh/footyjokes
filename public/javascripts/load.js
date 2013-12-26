@@ -17,7 +17,7 @@ $(document).ready(function(){
                 $(".now").append(boxHTML);
             
     
-    
+                console.log(id)
                 $.ajax({
                     type:"POST",
                     cache:false,
