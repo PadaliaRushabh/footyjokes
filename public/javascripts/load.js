@@ -29,8 +29,6 @@ $(document).ready(function(){
                         
                         if(id == id.like_users){
                             $("#" + id._id).children(".inputs").children("button:first").addClass('btn-danger').removeClass('btn-success'); 
-                        } else {
-                            continue;  
                         }
                          
         
