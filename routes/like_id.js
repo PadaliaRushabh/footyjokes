@@ -11,7 +11,7 @@ and if no error then render with passing the result variable in index.jade
 */
 exports.LikeID = function(req, res){
 
-    var user_id = req.body.user_id;
+    //var user_id = req.body.user_id;
     api.getLikeId(req.session.id , function(err , id){
     
         res.end(JSON.stringify(id));
