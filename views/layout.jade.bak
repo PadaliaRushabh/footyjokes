@@ -3,6 +3,13 @@ html
   head
     title= title
     meta(name="viewport" ,content="width=device-width initial-scale=1.0")
+    meta(name="google-signin-clientid", content="856043171652-kd4u05chu43k85d44lkbfeub747gksjj.apps.googleusercontent.com")
+    meta(name="google-signin-scope", content="https://www.googleapis.com/auth/plus.login")
+    meta(name="google-signin-scope", content= "https://www.googleapis.com/auth/plus.profile.emails.read")
+   
+    meta(name="google-signin-requestvisibleactions", content="http://schemas.google.com/AddActivity")
+    meta(name="google-signin-cookiepolicy" ,content="single_host_origin")
+
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     // -link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
@@ -26,6 +33,7 @@ html
                     a(href="#").brand FootyJokes
                     ul.nav.pull-right.login
                         img(src="images/facebook.png", width="40px", height="40px", id="facebook-login")
+                        img(src="images/google+.jpg", width="40px", height="40px", id="google-login")
         
                         
 
@@ -38,5 +46,7 @@ html
 
     script(src="javascripts/login.js")
     script(src="javascripts/facebook.js")
+    script(src="javascripts/google-lib.js")
+    script(src="javascripts/google.js")
     footer#footer
         p footer
