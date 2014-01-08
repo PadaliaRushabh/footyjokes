@@ -8,10 +8,17 @@ and if no error then render with passing the result variable in index.jade
 exports.Boxes = function(req, res){
     
     var count = 0;
-    if(typeof req.session.count === 'undefined'){
+    var refresh = req.body.refresh;
+    var refresh_bool = refresh ==="true" ? true : false
+
+    console.log(typeof refresh_bool)
+    console.log("bool:" + refresh_bool)
+    if(typeof req.session.count === 'undefined' || refresh_bool == true ){
         req.session.count = 0;
+        console.log("reset:")
         
     }
+    console.log(req.session.count)
     count = req.session.count;
     api.ViewAllPosts(Number(count) , function(err , result){
         if(!err){

@@ -16,6 +16,7 @@ exports.Login = function(req, res){
     req.session.user_name = name ;
     req.session.id = id ;
     req.session.login_type = type ;
+    req.session.count = 0 ;
     //console.log("User Name "  + req.session.user_name);
     api.login(post_to_save, function(err , user){
         

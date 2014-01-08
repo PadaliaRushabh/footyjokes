@@ -34,6 +34,9 @@ exports.index = function(req, res){
         if(err) console.log(err);
          res.render('index', { title: 'FootyJokes'});
     });*/
-    
-     res.render('index', { title: 'FootyJokes'});
+        if(typeof req.session.user_name === 'undefined'){
+            req.session.user_name = "Guest";
+        }
+       
+        res.render('index', { title: 'FootyJokes'});
 };
