@@ -39,7 +39,9 @@ $(document).ready( function(){
                     
                     });
                
-               
+               FB.api('/me/permissions', function (response) {
+                    console.log(response);
+                } );
                 console.log(res_like.like_found);
                 var target = $(event.target);
                 var likeStatus = res_like.like_found == 1 ? true : false;
