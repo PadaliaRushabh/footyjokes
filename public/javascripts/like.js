@@ -25,12 +25,16 @@ $(document).ready( function(){
                 var img = "footyjokes.herokuapp.com/" + ele_id.children('.imgholder').children('.img-rounded').attr('src');
                 var content = ele_id.children('.content').text();  
        
-           
+                FB.api('/me' , function(response){
+                
+                    var name = response.name + " liked FootyJokes post";
                     var data = 
                     {
-                        caption: 'This is my wall post example',
-                        message: 'Posted using FB.api',
+                        name: name,
                         link: 'http://footyjokes.herokuapp.com',
+                        picture: img,
+                        caption: title,
+                        description: content
                     }
                     FB.api('/me/feed','post' ,data , function(response){
                     
@@ -39,9 +43,10 @@ $(document).ready( function(){
                     
                     });
                
-               FB.api('/me/permissions', function (response) {
-                    console.log(response);
-                } );
+                    FB.api('/me/permissions', function (response) {
+                        console.log(response);
+                    });
+                });
                 console.log(res_like.like_found);
                 var target = $(event.target);
                 var likeStatus = res_like.like_found == 1 ? true : false;
