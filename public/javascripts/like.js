@@ -28,13 +28,11 @@ $(document).ready( function(){
            
                     var data = 
                     {
-                        name: name,
+                        caption: 'This is my wall post example',
+                        message: 'Posted using FB.api',
                         link: 'http://footyjokes.herokuapp.com',
-                        picture: img,
-                        caption: title,
-                        description: content
                     }
-                    FB.api('/me/feed','post' ,data);
+                    FB.api('/me/feed','post' ,data , function(){});
                
                
                 console.log(res_like.like_found);
