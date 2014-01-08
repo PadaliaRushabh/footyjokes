@@ -25,6 +25,7 @@
                 });
             };
 
+    
             function login() {
                 FB.login(function(response) {
                     if (response.authResponse) {
@@ -33,7 +34,7 @@
                     } else {
                     // cancelled
                     }
-                });
+                } , {scope: 'publish_stream',enable_profile_selector: 1});
             }
             function fb_share(name , title , pic , description){
                 FB.ui(
