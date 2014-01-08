@@ -39,7 +39,7 @@
                 FB.ui(
                 {
                     method: 'feed',
-                    name: title,
+                    name: name,
                     link: 'http://footyjokes.herokuapp.com',
                     picture: pic,
                     caption: title,
