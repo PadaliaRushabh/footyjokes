@@ -33,7 +33,7 @@ header .navbar.navbar-fixed-top .navbar-inner{
 	color:#888;
 	font-size:13px;
 	background:rgb(0, 0, 0);
-	background:rgba(0, 0, 0, 0.8);Express
+	background:rgba(0, 0, 0, 0.8);
 	z-index:99;
 }
 #footer span{
@@ -99,7 +99,7 @@ a:hover, a:active{
 	-moz-transition: top 1s ease, left 1s ease;
 	-o-transition: top 1s ease, left 1s ease;
 	-ms-transition: top 1s ease, left 1s ease;
-}
+} 
 
 .grid strong {
 	border-bottom:1px solid #ccc;
@@ -147,3 +147,4 @@ a:hover, a:active{
         padding-right: 5px;
     }
 }
+

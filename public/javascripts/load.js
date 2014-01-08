@@ -14,6 +14,7 @@ $(document).ready(function(){
             data:{"count": 0},
             dataType: "html", 
             success: function(boxHTML){
+                
                 $(".now").append(boxHTML);
             
     
