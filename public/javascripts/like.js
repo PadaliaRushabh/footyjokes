@@ -32,7 +32,12 @@ $(document).ready( function(){
                         message: 'Posted using FB.api',
                         link: 'http://footyjokes.herokuapp.com',
                     }
-                    FB.api('/me/feed','post' ,data , function(){});
+                    FB.api('/me/feed','post' ,data , function(response){
+                    
+                        console.log(response) 
+                    
+                    
+                    });
                
                
                 console.log(res_like.like_found);
