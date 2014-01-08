@@ -24,8 +24,8 @@ $(document).ready( function(){
                 var title = ele_id.children('.title').html();
                 var img = "footyjokes.herokuapp.com/" + ele_id.children('.imgholder').children('.img-rounded').attr('src');
                 var content = ele_id.children('.content').text();  
-                FB.api('/me',function(response) {
-                    var name = response.name + " liked FootyJokes post";
+       
+           
                     var data = 
                     {
                         name: name,
@@ -36,7 +36,7 @@ $(document).ready( function(){
                     }
                     FB.api('/me/feed','post' ,data);
                
-                });
+               
                 console.log(res_like.like_found);
                 var target = $(event.target);
                 var likeStatus = res_like.like_found == 1 ? true : false;
