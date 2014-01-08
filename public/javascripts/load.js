@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(window).scroll(function() {
         if($(window).scrollTop() + $(window).height() == $(document).height() ) {
             //console.log("near bottom!");
-            getBoxes(0);
+            getBoxes();
         };
     });
     
@@ -11,7 +11,7 @@ $(document).ready(function(){
             type:"POST",
             cache:false,
             url:"Boxes",
-            data:{"count": 0},
+            data:{"refresh": true},
             dataType: "html", 
             success: function(boxHTML){
                 
@@ -23,7 +23,6 @@ $(document).ready(function(){
                     type:"POST",
                     cache:false,
                     url:"LikeID",
-                    data:{"count": 0},
                     dataType: "json", 
                     success: function(Objid){
                         Objid.forEach(function(id){
@@ -39,15 +38,15 @@ $(document).ready(function(){
    });
 });
 
-var getBoxes = function(count){
+var getBoxes = function(){
     
     //var count = 0;
     $.ajax({
             type:"POST",
             cache:false,
             url:"Boxes",
-            data:{"count": count},
             dataType: "html",
+            data:{"refresh":false},
             success: function(boxHTML , id){
                 console.log(id)
                 $(".next").append(boxHTML);

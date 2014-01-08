@@ -35,7 +35,7 @@
                     }
                 });
             }
-            function share(title , pic , description){
+            function fb_share(name , title , pic , description){
                 FB.ui(
                 {
                     method: 'feed',
