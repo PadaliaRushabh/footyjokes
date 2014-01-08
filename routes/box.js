@@ -7,7 +7,7 @@ and if no error then render with passing the result variable in index.jade
 */
 exports.Boxes = function(req, res){
     
-    var count = 0;
+   // var count = 0;
     var refresh = req.body.refresh;
     var refresh_bool = refresh ==="true" ? true : false
 

@@ -9,9 +9,9 @@ var Post = require('../../models/models.js')
     ,mongoose = require('mongoose');
 
 //connect to our cloud database server
-mongoose.connect('mongodb://footyjokes:footyjokes@ds035428.mongolab.com:35428/footyjokes');
+//mongoose.connect('mongodb://footyjokes:footyjokes@ds035428.mongolab.com:35428/footyjokes');
 
-//mongoose.connect('mongodb://127.0.0.1/footyjokes');
+mongoose.connect('mongodb://127.0.0.1/footyjokes');
 api = function(){};
 //fetch all blogs from database
 api.prototype.ViewAllPosts = function(count , callback){
