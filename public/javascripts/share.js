@@ -11,18 +11,16 @@ $(document).ready(function(){
                                  
         var title = ele_id.children('.title').html();
         var img = "footyjokes.herokuapp.com/" + ele_id.children('.imgholder').children('.img-rounded').attr('src');
-        var content = ele_id.children('.content').text();
-        var name = GetFBName() + " shared FootyJokes post";
-      
-        fb_share(name , title , img , content);
-    });
-    
-    function GetFBName(){
+        var content = ele_id.children('.content').text();  
+       
         FB.api('/me', function(response) {
-                   
-            return response.name;
-                    
+               
+            var name = response.name + " shared FootyJokes post";
+            fb_share(name , title , img , content);        
         });
     
-    }
+    });
+    
+
+    
 });
