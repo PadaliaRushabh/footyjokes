@@ -19,6 +19,7 @@
     /*To store the post content*/
     var Post = new mongoose.Schema({
        login_id:String
+      ,user_image:String
       ,author:String
       ,article_image:[String]
       ,date:Date

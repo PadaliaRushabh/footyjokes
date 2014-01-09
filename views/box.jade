@@ -1,7 +1,7 @@
 // function(mixin) grid
 mixin grid(box)
     .profile-display
-        img(src='images/me.jpg').img-circle.profile-pic
+        img(src=box.user_image}).img-circle.profile-pic
         small.name #{box.author}
         small.date #{box.date}
     .clear
